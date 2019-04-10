@@ -1,10 +1,6 @@
 #!/bin/sh
 
-for sample in * ;  do
-	if test -d $sample ; then
-		echo $sample:
-		cd $sample
-		make $1 $2 || exit
-		cd ..
-	fi
-done
+echo "----------mouse build--------"
+cd mouse
+make $1 $2 || exit
+cd ..

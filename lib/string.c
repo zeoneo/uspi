@@ -37,6 +37,9 @@ void String (TString *pThis)
 	pThis->m_nSize = 0;
 }
 
+
+
+
 void String2 (TString *pThis, const char *pString)
 {
 	assert (pThis != 0);

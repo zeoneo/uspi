@@ -25,11 +25,15 @@ OBJS	= uspilibrary.o \
 	  usbmassdevice.o \
 	  dwhciframeschednper.o dwhciframeschedper.o keymap.o usbkeyboard.o \
 	  dwhcirootport.o usbmouse.o \
-	  dwhciframeschednsplit.o usbgamepad.o synchronize.o usbstring.o usbmidi.o
+	  dwhciframeschednsplit.o usbgamepad.o synchronize.o usbstring.o usbmidi.o \
+	  uart0.o printf.o doprint.o \
 
 libuspi.a: $(OBJS)
 	@echo "  AR    $@"
 	@rm -f $@
 	@$(AR) cr $@ $(OBJS)
+
+.c.o:
+	$(CC) -MD -c $< -o $@ -std=gnu11 $(CFLAGS) $(CPPFLAGS)
 
 include ../Rules.mk

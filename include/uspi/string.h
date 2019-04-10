@@ -45,6 +45,7 @@ const char *StringSet (TString *pThis, const char *pString);
 
 size_t StringGetLength (TString *pThis);
 
+
 void StringAppend (TString *pThis, const char *pString);
 int StringCompare (TString *pThis, const char *pString);
 int StringFind (TString *pThis, char chChar);			// returns index or -1 if not found

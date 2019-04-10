@@ -5,6 +5,7 @@
 #include <uspi.h>
 #include <uspios.h>
 #include <uspienv/util.h>
+#include <uspi/uart0.h>
 
 static const char FromSample[] = "sample";
 
@@ -19,6 +20,7 @@ static void MouseStatusHandler (unsigned nButtons, int nDisplacementX, int nDisp
 
 int main (void)
 {
+		uart_init();
 	if (!USPiEnvInitialize ())
 	{
 		return EXIT_HALT;
